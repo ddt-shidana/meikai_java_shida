@@ -1,28 +1,24 @@
-/*
- * 『明解Java入門編』柴田望洋
- *
- * 問題:演習3-16 p77
- * 	三つの整数値を読み込んで昇順にソートするプログラムを作成せよ。
- *
- * パッケージ名:ensyu03_16
- * クラス名:Ensyu03_16
- * 作成日:2022/02/22
- * 作成者:ShidaKazuna
- * 修正日:
- * 修正者:
- * ver:1.0.0
- */
-
-
 package ensyu03_16;
 
 //キーボードからの入力値取得準備するためimport
 import java.util.Scanner;
 
+/**
+ * 『明解Java入門編』柴田望洋<br>
+ *
+ * 問題:演習3-16 p77<br>
+ * 	三つの整数値を読み込んで昇順にソートするプログラムを作成せよ。<br>
+ *
+ * 作成日:2022/02/22<br>
+ * 修正日:2022/09/14<br>
+ * ver:1.1.0
+ * @author ShidaKazuna
+ *
+ */
 public class Ensyu03_16 {
-//ここからクラス内容
+	
 	public static void main(String[] args) {
-		//ここからmainメソッド
+		
 		//stdInにキーボードからの入力値を初期設定
 		Scanner stdIn = new Scanner (System.in);
 
@@ -63,8 +59,6 @@ public class Ensyu03_16 {
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
 		stdIn.close();
 
-	//mainメソッドここまで
 	}
 
-//クラス内容ここまで
 }

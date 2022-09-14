@@ -1,30 +1,24 @@
-/*
- * 『明解Java入門編』柴田望洋
- *
- * 問題:演習3-13 p73
- * 	キーボードから読み込んだ三つの整数値の中央値を求めて
- * 	表示するプログラムを作成せよ。
- *
- * パッケージ名:ensyu3_13
- * クラス名:Ensyu3_13
- * 作成日:2022/02/22
- * 作成者:ShidaKazuna
- * 修正日:2022/03/03
- * 修正者:
- * ver:1.0.0
- */
-
-
 package ensyu03_13;
 
 //キーボードからの入力値取得準備するためimport
 import java.util.Scanner;
 
+/**
+ * 『明解Java入門編』柴田望洋<br>
+ *
+ * 問題:演習3-13 p73<br>
+ * 	キーボードから読み込んだ三つの整数値の中央値を求めて
+ * 	表示するプログラムを作成せよ。<br>
+ *
+ * 作成日:2022/02/22<br>
+ * 修正日:2022/09/14<br>
+ * ver:1.1.0
+ * @author ShidaKazuna
+ *
+ */
 public class Ensyu03_13 {
-//ここからクラスの内容です。
 
 	public static void main(String[] args) {
-	//ここからmainメソッド
 
 		//プログラム開始メッセージ
 		System.out.println("3つの整数の中央値を判定するプログラムです。\n");
@@ -41,109 +35,115 @@ public class Ensyu03_13 {
 			System.out.println("整数値を3つ入力してください。");
 			//整数型変数a,b,cを用意し、入力値(stdIn)を初期設定
 			System.out.print("整数a：");
-			int a = stdIn.nextInt();
+			int aInt = stdIn.nextInt();
 			System.out.print("整数b：");
-			int b = stdIn.nextInt();
+			int bInt = stdIn.nextInt();
 			System.out.print("整数c：");
-			int c = stdIn.nextInt();
+			int cInt = stdIn.nextInt();
 
 			//3つの整数値から最小値を求める
 			//aを最小値minに初期設定
-			int min = a;
+			int min = aInt;
 			//現在のminよりbが小さいならば、minにbを代入
-			if (b < min) min = b;
+			if (bInt < min) min = bInt;
 			//現在のminよりcが小さいならば、minにcを代入
-			if (c < min) min = c;
+			if (cInt < min) min = cInt;
 
 			//3つの整数値から最大値を求める
 			//aを最大値maxに初期設定
-			int max = a;
+			int max = aInt;
 			//現在のmaxよりbが大きいならば、maxにbを代入
-			if (b > max) max = b;
+			if (bInt > max) max = bInt;
 			//現在のmaxよりcが大きいならば、maxにcを代入
-			if (c > max) max = c;
+			if (cInt > max) max = cInt;
 
 			//3つの整数値でmin.maxと一致しない中央値mediumを求める
-
-			/*没 ※push前の物です
-			int medium = a;		//int型変数mediumを用意
-			if (a != min && a != max) medium = a;
-			if (b != min && b != max) medium = b;
-			if (c != min && c != max) medium = c;
-			*/
-
-			/*没2 ※push前の物です
-			//aを中央値mediumに初期設定
-			int medium = a;
-			//aが最小値または最大値だった場合
-				//bが最小値または最大値だった時、中央値はc
-				//bが最小値でも最大値でもない時、中央値はb
-			if (a == min || a == max)
-				if (b == min || b == max) medium = c;
-				else medium = b;
-			//(aは最小値でも最大値でもない時)
-			//bが最小値または最大値だった場合、中央値はc
-			else if (b == min || b == max) medium = c;
-			//(aもbも最小値でも最大値でもないとき)、中央値はa
-			else medium = a;
-			*/
-
-			/*中央値medium
-			 * ①a=b=cのとき・・・中央値：a=b=c
-			 * ②a=b||b=c||c=aのとき
-			 * 	(1)a=b(!=c)のとき・・・中央値：a=b
-			 * 	(2)b=c(!=a)のとき・・・中央値：b=c
-			 * 	(3)c=a(!=b)のとき・・・中央値：c=a
-			 * ③a!=b&b!=c&&c!=aのとき
-			 * 	(1)a=maxのとき
-			 * 		(ⅰ)b=minのとき・・・中央値：c
-			 * 		(ⅱ)c=minのとき・・・中央値：b
-			 * 	(2)b=maxのとき
-			 * 		(ⅰ)a=minのとき・・・中央値：c
-			 * 		(ⅱ)c=minのとき・・・中央値：a
-			 * 	(3)c=maxのとき
-			 * 		(ⅰ)a=minのとき・・・中央値：b
-			 * 		(ⅱ)b=minのとき・・・中央値：a
-			 */
-			int med = a;
-			if (a == b && b == a && c == a)
-				med = a;
-			else if (a == b || b == c || c == a) {
-				if (a == b) 		med = a;
-				else if (b == c)	med = c;
-				else 				med = b;
-			}
-			else {
-				if (a == max) {
-					if (b == min)			med = c;
-					else if (c == min)		med = b;
+			//中央値の初期値としてaIntを設定
+			int med = aInt;
+			//①a=b=cのとき
+			if (aInt == bInt && bInt == aInt && cInt == aInt)
+				//中央値：a=b=c
+				med = aInt;
+			//②a=b||b=c||c=aのとき
+			else if (aInt == bInt || bInt == cInt || cInt == aInt) {
+				//(1)a=b(!=c)のとき
+				if (aInt == bInt) {
+					//中央値：a=b
+					med = aInt;
 				}
-				else if (b == max) {
-					if (a == min)			med = c;
-					else if (c == min)		med = a;
+				//(2)b=c(!=a)のとき
+				else if (bInt == cInt) {
+					//中央値：b=c
+					med = cInt;
 				}
+				//(3)c=a(!=b)のとき
 				else {
-					if (a == min)			med = b;
-					else if (b == min)		med = a;
+					//中央値：c=a
+					med = bInt;
+				}
+			}
+			//③a!=b&b!=c&&c!=aのとき
+			else {
+				//(1)a=maxのとき
+				if (aInt == max) {
+					//(ⅰ)b=minのとき
+					if (bInt == min) {
+						//中央値：c
+						med = cInt;
+					}
+					//(ⅱ)c=minのとき
+					else {
+						//中央値：b
+						med = bInt;
+					}
+				}
+				//(2)b=maxのとき
+				else if (bInt == max) {
+					//(ⅰ)a=minのとき
+					if (aInt == min) {
+						//中央値：c
+						med = cInt;
+					}
+					//(ⅱ)c=minのとき
+					else {
+						//中央値：a
+						med = aInt;
+					}
+				}
+				//(3)c=maxのとき
+				else {
+					//(ⅰ)a=minのとき
+					if (aInt == min) {
+						//中央値：b
+						med = bInt;
+					}
+					//(ⅱ)b=minのとき
+					else {
+						//中央値：a
+						med = aInt;
+					}
 				}
 			}
 
 			//3つの整数値の中央値(medium)を画面表示させる。
 			System.out.println("3つの整数値の中央値は" + med + "です。");
 
-		//retryNumは0か1
-		do {
-			System.out.print("\nもう一度？ YES・・・1/NO・・・0：\n");
-			retryNum = stdIn.nextInt();
-		} while (retryNum < 0 || retryNum > 1);
-
-	} while (retryNum == 1);
+			//このプログラムをもう一度実行するかどうかを聞くブロック
+			do {
+				//1か0を入力してもらう
+				System.out.print("\nもう一度？ YES・・・1/NO・・・0：\n");
+				//retryNumはキーボードからの入力値
+				retryNum = stdIn.nextInt();
+			
+			//retryNumが0か1以外の場合もう一度doブロックを繰り返す
+			} while (retryNum < 0 || retryNum > 1);
+			
+		//retryNumが1の間このプログラムを繰り返す
+		} while (retryNum == 1);
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
 		stdIn.close();
 
-	//ここまでmainメソッド
 	}
 
-//クラスの内容ここまで
 }
