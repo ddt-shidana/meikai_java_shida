@@ -34,27 +34,18 @@ public class Ensyu02_08 {
 
 		////使用者がわかりやすいようにナビで
 		//「整数値：」と画面表示させる
-		System.out.println ("整数値:");
+		System.out.print ("整数値:");
 		//入力した値を変数にもっておく
 		int xInt = stdIn.nextInt();
 
-		//整数型変数randnam4を用意して、0～11の乱数値を初期設定
+		//整数型変数randnam4を用意して、0～10の乱数値を初期設定
 		int randNum4 = rand.nextInt(11);
 
 		//求めたいのは 入力値 + (0～11のランダムな値) - 5
 		int randInt = xInt + randNum4 - 5;
 		
-		//求めたい値が 入力値±5になっているかチェック
-		//なっていなければエラー
-		if (randInt < xInt - 5 || randInt > xInt + 5) {
-			//エラーのお知らせ
-			System.out.println("入力値±5になっていません＞＞＞＞" + randInt);
-		}
-		//なっていれば
-		else {
-			//入力値±5の値を画面表示させる
-			System.out.println("その値の±5の乱数を生成しました。それは" + (randNum4 - 5) + "です。");
-		}
+		//入力値±5の値を画面表示させる
+		System.out.println("その値の±5の乱数を生成しました。それは" + randInt + "です。");
 		
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
 		stdIn.close();
