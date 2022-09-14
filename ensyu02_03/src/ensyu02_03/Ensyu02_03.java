@@ -21,28 +21,25 @@ package ensyu02_03;
 import java.util.Scanner;
 
 public class Ensyu02_03 {
-//ここからクラスの内容です
 
 	public static void main(String[] args) {
-	//ここからmainメソッド
-		//stdInにキーボードからの入力値を初期設定
+		
+		//stdIn(standard input:標準入力)にキーボードからの入力値を初期設定
 		Scanner stdIn = new Scanner(System.in);
 
 		//使用者がわかりやすいようにナビで「整数値:」と画面表示させる
 		System.out.println ("整数値:");
 
 		//整数型変数zを用意し、stdInを初期設定
-		//入力値が整数値よりも大きい箱の場合、エラーになります。
-		int z = stdIn.nextInt();
+		//入力値が整数型の入力桁数より大きい場合、エラーになります。
+		int zInt = stdIn.nextInt();
 
 		//キーボードから読み込んだ整数値(stdIn=z)を画面表示させる。
-		System.out.println (z + "と入力しましたね。");
+		System.out.println (zInt + "と入力しましたね。");
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
 		stdIn.close();
 
-	//ここまでmainメソッド
 	}
 
-//クラスの内容ここまで
 }

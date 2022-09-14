@@ -20,31 +20,30 @@ package ensyu02_05;
 import java.util.Scanner;
 
 public class Ensyu02_05 {
-//クラス内容ここまで
 
 	public static void main(String[] args) {
-	//ここからmainメソッド
 
 		//stdInに入力値の取得
 		Scanner stdIn = new Scanner (System.in);
 
-		//xの値を入力値から取得
+		//xの値の入力案内
 		System.out.println ("xの値:");
-		double x = stdIn.nextDouble();
+		//xの値を入力値から取得
+		double xDouble = stdIn.nextDouble();
 
-		//yの値を入力値から取得
+		//yの値の入力案内
 		System.out.println ("yの値:");
-		double y = stdIn.nextDouble();
+		//yの値を入力値から取得
+		double yDouble = stdIn.nextDouble();
 
 		//コメント出力:xとyの合計値を表示
-		System.out.println ("合計は" + (x + y) + "です。");
+		System.out.println ("合計は" + (xDouble + yDouble) + "です。");
 		//コメント出力:xとyの平均値を表示
-		System.out.println ("平均は" + (x + y) / 2 + "です。");
+		System.out.println ("平均は" + (xDouble + yDouble) / 2 + "です。");
+		
+		//scannerのインスタンスをクローズ
+		stdIn.close();
 
-		stdIn.close();		//scannerのインスタンスをクローズ
-
-	//mainメソッドここまで
 	}
 
-//クラス内容ここまで
 }

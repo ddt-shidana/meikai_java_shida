@@ -25,7 +25,7 @@ import java.util.Random;
 public class Ensyu02_07 {
 
 	public static void main(String[] args) {
-	//ここからmainメソッド
+		
 		//randに乱数を初期設定
 		Random rand = new Random();
 
@@ -41,8 +41,6 @@ public class Ensyu02_07 {
 		System.out.println (randNum2);
 		System.out.println (randNum3);
 
-	//mainメソッドここまで
 	}
 
-//クラス内容ここまで
 }

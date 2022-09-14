@@ -20,23 +20,21 @@ public class Ensyu02_02 {
 //ここからクラスの内容
 
 	public static void main(String[] args) {
-	//ここからmainメソッド
+		
 		//x,y,zにそれぞれ任意の整数値を直書きで初期設定しておく。
-		int x = 1, y = 2, z = 3;
+		int xInt = 1, yInt = 2, zInt = 3;
 
 		//xの値を画面表示させる。
-		System.out.println("xの値は" + x + "です。");
+		System.out.println("xの値は" + xInt + "です。");
 		//yの値を画面表示させる。
-		System.out.println("yの値は" + y + "です。");
+		System.out.println("yの値は" + yInt + "です。");
 		//zの値を画面表示させる。
-		System.out.println("zの値は" + z + "です。");
+		System.out.println("zの値は" + zInt + "です。");
 		//x,y,zの合計値を画面表示させる。
-		System.out.println("合計は" + (x + y + z) + "です。");
+		System.out.println("合計は" + (xInt + yInt + zInt) + "です。");
 		//x,y,zの平均値を画面表示させる。
-		System.out.println("平均は" + (x + y + z) / 3 + "です。");
+		System.out.println("平均は" + (xInt + yInt + zInt) / 3 + "です。");
 
-	//ここまでmainメソッド
 	}
 
-//クラスの内容ここまで
 }

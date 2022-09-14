@@ -22,30 +22,28 @@ package ensyu02_10;
 import java.util.Scanner;
 
 public class Ensyu02_10 {
-//クラス内容ここから
 
 	public static void main(String[] args) {
-	//ここからmainメソッド
 
-		//stdStに入力値を取得
+		//stdStはキーボードからの入力値
 		Scanner stdSt = new Scanner (System.in);
 
-		//姓を入力してもらう
+		//姓を入力してもらう案内
 		System.out.println ("姓:");
-		String s = stdSt.next();
+		//seiはキーボードから入力された名字
+		String sei = stdSt.next();
 
-		//名前を入力してもらう
+		//名前を入力してもらう案内
 		System.out.println ("名:");
-		String m = stdSt.next();
+		//myouはキーボードから入力された名前
+		String myou = stdSt.next();
 
-		//コメント出力：こんにちは～～さん。
-		System.out.println ("こんにちは" + s + m + "さん。");
+		//コメント出力：こんにちは「氏名」さん。
+		System.out.println ("こんにちは" + sei + myou + "さん。");
 
 		//scannerのインスタンスをクローズ
 		stdSt.close();
 
-	//mainメソッドここまで
 	}
 
-//クラス内容ここまで
 }

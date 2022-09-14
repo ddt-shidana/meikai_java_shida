@@ -20,7 +20,6 @@ package ensyu02_06;
 import java.util.Scanner;
 
 public class Ensyu02_06 {
-//ここからmainメソッド
 
 	public static void main(String[] args) {
 
@@ -30,12 +29,14 @@ public class Ensyu02_06 {
 		//コメント出力:三角形の面積を求めます。
 		System.out.println ("三角形の面積を求めます。");
 
-		//底辺の大きさを入力値から取得
+		//底辺の値を入力案内
 		System.out.println ("底辺:");
+		//底辺の大きさを入力値から取得
 		double buttom = stdIn.nextDouble();
 
-		//高さの大きさを入力値から取得
+		//高さの値を入力案内
 		System.out.println ("高さ:");
+		//高さの大きさを入力値から取得
 		double height = stdIn.nextDouble();
 
 		//コメント出力:三角形の面積を計算して表示

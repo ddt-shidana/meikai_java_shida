@@ -24,10 +24,8 @@ package ensyu02_09;
 import java.util.Random;
 
 public class Ensyu02_09 {
-//クラス内容ここから
 
 	public static void main(String[] args) {
-	//ここからmainメソッド
 
 		//randに乱数を取得
 		Random rand = new Random();
@@ -44,8 +42,6 @@ public class Ensyu02_09 {
 		System.out.println (randNum6);
 		System.out.println (randNum7);
 
-	//mainメソッドここまで
 	}
 
-//クラス内容ここまで
 }

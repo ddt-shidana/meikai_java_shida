@@ -24,24 +24,21 @@
 package ensyu02_01;
 
 public class Ensyu02_01 {
-//ここからクラスの内容
 
 	public static void main(String[] args) {
-	//ここからmainメソッド
-		//x,yに小数部の有る実数値を直書きで初期設定しておく。
-		int x = 63.5, y = 18.2;
+		
+		//xInt,yIntに小数部の有る実数値を直書きで初期設定しておく。
+		int xInt = 63.5, yInt = 18.2;
 
 		//xの値を画面表示させる。
-		System.out.println("xの値は" + x + "です。");
+		System.out.println("xの値は" + xInt + "です。");
 		//yの値を画面表示させる。
-		System.out.println("yの値は" + y + "です。");
+		System.out.println("yの値は" + yInt + "です。");
 		//xとyの合計値を画面表示させる。
-		System.out.println("合計は" + (x + y) + "です。");
+		System.out.println("合計は" + (xInt + yInt) + "です。");
 		//xとyの平均値を画面表示させる。
-		System.out.println("平均は" + (x + y) / 2 + "です。");
+		System.out.println("平均は" + (xInt + yInt) / 2 + "です。");
 
-	//ここまでmainメソッド
 	}
 
-//クラスの内容ここまで
 }
