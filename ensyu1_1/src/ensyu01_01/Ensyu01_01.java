@@ -19,18 +19,15 @@
  */
 
 
-package ensyu1_1;
+package ensyu01_01;
 
-public class Ensyu1_1 {
-//ここからクラスの内容
-
+public class Ensyu01_01 {
+	
 	public static void main(String[] args) {
-	//ここからメインメソッド
+		
 		//文末のセミコロンをわざと省略した命令文を用意する。
 		System.out.println("セミコロンが欠如しているとどうなるか")
 
-	//ここまでメインメソッド
 	}
 
-//クラスの内容ここまで
 }

@@ -14,9 +14,9 @@
  */
 
 
-package ensyu1_3;
+package ensyu01_03;
 
-public class Ensyu1_3 {
+public class Ensyu01_03 {
 //ここからクラスの内容
 
 	public static void main(String[] args) {

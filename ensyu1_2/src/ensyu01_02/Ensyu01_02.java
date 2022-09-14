@@ -13,18 +13,15 @@
  */
 
 
-package ensyu1_2;
+package ensyu01_02;
 
-public class Ensyu1_2 {
-//ここからクラスの内容
+public class Ensyu01_02 {
 
 	public static void main(String[] args) {
-	//ここからmainメソッド
+		
 		//自分の氏名、一文字ごとに改行して、画面表示する。
 		System.out.println("信\n太\n一\n那");
 
-	//ここまでメインメソッド
 	}
 
-//クラスの内容ここまで
 }
