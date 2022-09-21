@@ -29,7 +29,7 @@ public class Ensyu04_02 {
 		int no = rand.nextInt(90) + 10;
 
 		//ゲームプレイする人が数当てで入力する値を格納するための、整数型変数xを用意
-		int x;
+		int xInt;
 
 		//ゲームスタートの文言を画面表示させる
 		System.out.println("数当てゲーム開始!!\n10～99の値を入力してください。");
@@ -39,14 +39,14 @@ public class Ensyu04_02 {
 			System.out.print("いくつかな？：");
 
 			//あらかじめ用意していたxにゲームプレイ者が入力した値を代入
-			x = stdIn.nextInt();
+			xInt = stdIn.nextInt();
 
 			//入力値(x)がnoより小さい時
-			if (x > no) {
+			if (xInt > no) {
 				//「もっと小さい数だよ」と画面表示させる
 				System.out.println("もっと小さい数だよ");
 			//入力値(x)がnoより大きい時
-			} else if (x < no) {
+			} else if (xInt < no) {
 				//「もっと大きい数だよ」と画面表示させる
 				System.out.println("もっと大きい数だよ");
 			}
@@ -54,7 +54,7 @@ public class Ensyu04_02 {
 		//doメソッドここまで
 		}
 		//入力値xがゲームスタート時に生成した乱数(no)と一致しない間、doメソッドを繰り返す
-		while (x != no);
+		while (xInt != no);
 
 		//入力値xがゲームスタート時に生成した乱数(no)と一致したら「正解です。」と画面表示させる
 		System.out.println("正解です。");
