@@ -41,7 +41,7 @@ public class Ensyu02_08 {
 		//整数型変数randnam4を用意して、0～10の乱数値を初期設定
 		int randNum4 = rand.nextInt(11);
 
-		//求めたいのは 入力値 + (0～11のランダムな値) - 5
+		//求めたいのは 入力値 + (0～10のランダムな値) - 5
 		int randInt = xInt + randNum4 - 5;
 		
 		//入力値±5の値を画面表示させる
