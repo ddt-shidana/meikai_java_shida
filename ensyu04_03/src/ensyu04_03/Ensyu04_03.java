@@ -22,40 +22,40 @@ public class Ensyu04_03 {
 		Scanner stdIn = new Scanner (System.in);
 
 		//二つの整数値を入力してもらうため、メッセージを画面表示させる
-		//整数型変数z1,z2を用意し、入力値(stdIn)を初期設定
+		//整数型変数maxInt,minIntを用意し、入力値(stdIn)を初期設定
 		//入力値の型が整数型よりも大きい箱の場合、エラーになります。
 		System.out.print("整数値A:");
-		int z1 = stdIn.nextInt();
+		int maxInt = stdIn.nextInt();
 		System.out.print("整数値B:");
-		int z2 = stdIn.nextInt();
+		int minInt = stdIn.nextInt();
 
-		//z1>z2になるように、値の大小比較をし、
-		//z1<z2になっていた場合は、値を入れ替える。
-		if (z1 < z2) {
+		//maxInt>=minIntになるように、値の大小比較をし、
+		//maxInt<minIntになっていた場合は、値を入れ替える。
+		if (maxInt < minInt) {
 			//tempは値の入れ替えをする時に使う仮変数
-			int temp = z1;
-			z1 = z2;
-			z2 = temp;
+			int temp = maxInt;
+			maxInt = minInt;
+			minInt = temp;
 		}
 
 		//入力した整数値で大きいほうの値を画面表示させる
-		System.out.println(z2 + "　");
+		System.out.println(minInt + "　");
 
-		//z1とz2の間にある整数値を格納するため、整数型変数zを用意し、
-		//z2(入力した2つの整数のうち小さいほう)を初期設定
-		int zInt = z2;
+		//maxIntとminIntの間にある整数値を格納するため、整数型変数zを用意し、
+		//minInt(入力した2つの整数のうち小さいほう)を初期設定
+		int midInt = minInt;
 
-		//z1からz2までの全整数を画面表示させる
-		do {
-			//zIntを1つ増やす
-			zInt = (zInt + 1);
+		//minIntからmaxIntまでの全整数を画面表示させる
+		while (midInt < maxInt) {
+			//minIntを1つ増やす
+			midInt = (midInt + 1);
 
 			//zIntの隣に次のzIntを画面表示させる
-			System.out.println(zInt + "　");
+			//最後の画面表示はmaxIntになる
+			System.out.println(midInt + "　");
 
-		//z= z1にならない間、doメソッドを繰り返す
-		//最後の画面表示はz1になる
-		}	while (zInt < z1);
+		//midInt = maxIntにならない間、doメソッドを繰り返す
+		}
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
 		stdIn.close();
