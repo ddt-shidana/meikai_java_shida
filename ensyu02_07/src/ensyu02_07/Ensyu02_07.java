@@ -30,9 +30,9 @@ public class Ensyu02_07 {
 		Random rand = new Random();
 
 		//整数型変数randNam1を用意し1桁の正の整数値を初期設定
-		int randNum1 = rand.nextInt(10);
+		int randNum1 = rand.nextInt(9) + 1;
 		//整数型変数randNam2を用意し1桁の負の整数値を初期設定
-		int randNum2 = - rand.nextInt(10);
+		int randNum2 = - rand.nextInt(9) - 1;
 		//整数型変数randNam3を用意し2桁の正の整数値を初期設定
 		int randNum3 = rand.nextInt(90) + 10;
 
