@@ -1,21 +1,3 @@
-/*
- * 『明解Java入門編』柴田望洋
- *
- * 問題:演習4-20 p125
- * 	n段の正方形を表示するプログラムを作成せよ。
- * 	右に示すのは、nが3のときの実行結果である。
- *
- * パッケージ名:ensyu04_20
- * クラス名:Ensyu04_20
- * 作成日:2022/02/24
- * 作成者:ShidaKazuna
- * 修正日:
- * 修正者:
- * ver:1.0.0
- *
- */
-
-
 package ensyu04_20;
 
 //キーボードからの入力値取得準備するためimport
@@ -54,7 +36,6 @@ public class Ensyu04_20 {
 			step = stdIn.nextInt();
 			//1以上でないと図形が作成できない為、1未満の場合聞き直す
 		} while (step < 1);
-
 
 		//縦列：変数verticalを1からはじめて、1つずつ増やしながら、n回ループさせる
 		for (int vertical = 1; vertical <= step; vertical++) {
