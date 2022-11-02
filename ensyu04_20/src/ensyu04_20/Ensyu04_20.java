@@ -11,7 +11,7 @@ import java.util.Scanner;
  * 	右に示すのは、nが3のときの実行結果である。<br>
  *
  * 作成日:2022/02/22<br>
- * 修正日:2022/09/28<br>
+ * 修正日:2022/11/02<br>
  * ver:1.1.0
  * @author ShidaKazuna
  */
@@ -19,41 +19,47 @@ public class Ensyu04_20 {
 
 	public static void main(String[] args) {
 		
-		//stdInにキーボードからの入力値を初期設定
-		Scanner stdIn = new Scanner(System.in);
+		//standardInputにキーボードからの入力値を初期設定
+		Scanner standardInput = new Scanner(System.in);
 
 		//正方形を表示させるプログラムの開始メッセージを画面表示させる
 		System.out.println ("縦横n個の*で正方形を表示させます。");
 
 		//正方形の段数
-		int step;
+		int stepNumber;
 
 		//段数を聞くブロック
 		do {
 			//正の整数を入力してもらうため、メッセージを画面表示させる
 			System.out.println ("正の整数n:");
 			//nに入力値を初期設定
-			step = stdIn.nextInt();
-			//1以上でないと図形が作成できない為、1未満の場合聞き直す
-		} while (step < 1);
-
-		//縦列：変数verticalを1からはじめて、1つずつ増やしながら、n回ループさせる
-		for (int vertical = 1; vertical <= step; vertical++) {
+			stepNumber = standardInput.nextInt();
 			
-			//横列：変数besideを1からはじめて、1つずつ増やしながら、n回ループさせる
-			for (int beside = 1; beside <= step; beside++) {
+		//1以上でないと図形が作成できない為、1未満の場合聞き直す
+		} while (stepNumber < 1);
+
+		//縦列のループ
+		for (int verticalIndex = 1; verticalIndex <= stepNumber; verticalIndex++) {
+			
+			//横列のループ
+			for (int besideIndex = 1; besideIndex <= stepNumber; besideIndex++) {
+				
 				//'*'を表示させる。
 				System.out.print('*');
-				//横列の'*'間と縦の行間を揃えるために、スペースを追加
-				if (beside < step)
+				
+				//最後のループ処理じゃなければ
+				if (besideIndex < stepNumber) {
+					//横列の'*'間と縦の行間を揃えるために、スペースを追加
 					System.out.print(" ");
+				}
 			}
+			
 			//改行
 			System.out.println();
 		}
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 }
