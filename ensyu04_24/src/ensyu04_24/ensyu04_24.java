@@ -20,8 +20,8 @@ public class ensyu04_24 {
 
 	public static void main(String[] args) {
 
-		//stdInにキーボードからの入力値を初期設定
-		Scanner stdIn = new Scanner(System.in);
+		//standardInputにキーボードからの入力値を初期設定
+		Scanner standardInput = new Scanner(System.in);
 
 		//繰り返しプログラムを行うための変数を用意
 		int retryNum;
@@ -31,53 +31,62 @@ public class ensyu04_24 {
 			//素数判定プログラムの開始メッセージを画面表示させる
 			System.out.println("正の整数nが素数であるかどうか判定します。");
 
-			//正の整数nInt(nInt>=3)変数を用意
-			int nInt;
+			//正の整数positiveInteger(>0)変数を用意
+			int positiveInteger;
 
-			//nIntを決めるかたまり
+			//positiveIntegerを決めるかたまり
 			do {
 				
 				//正の整数nIntを聞く
 				System.out.print("正の整数n:");
-				//nIntに入力値を格納
-				nInt = stdIn.nextInt();
+				//positiveIntegerに入力値を格納
+				positiveInteger = standardInput.nextInt();
 				
-				//nIntは正の整数なので0未満の場合はエラーメッセージを表示し、
-				if (nInt <= 0) {
+				//positiveIntegerは正の整数なので0未満の場合はエラーメッセージを表示し、
+				if (positiveInteger <= 0) {
 					System.out.println("正の整数を入力してください。\n");
 				}
 				
 			//聞き直す
-			} while (nInt <= 0);
+			} while (positiveInteger <= 0);
 
-			switch(nInt) {
-			case 1:
-				System.out.println("素数判定外です。");
-				break;
-			case 2:
-				System.out.println("素数です。");
-				break;
-			default:
-				//nIntを2、3、・・・nIntで割るループ
-				for (int divisor = 2; divisor < nInt; divisor++) {
-
-					//t(2<=divisor<n)でnを割り、余りが0になることがあれば素数ではない、
-					if (nInt % divisor == 0) {
-						System.out.println("素数ではありません");
-						break;
-					}
-
-					//t(2<=divisor<n)でnを割り、余りが1以上であれば素数である
-					else {
-						//nInt自身以外で割り切れなかったら素数決定
-						if (divisor == nInt - 1) {
-							System.out.println("素数です");
-						//nInt自身以外で割るのをすべて試すまで繰り返す
-						}else {
-							continue;
+			//positiveIntegerの値で分岐
+			switch(positiveInteger) {
+				
+				//positiveInteger == 1 のとき
+				case 1:
+					//素数の定義に当てはまらない
+					System.out.println("素数判定外です。");
+					break;
+					
+				//positiveInteger==2のとき
+				case 2:
+					//2は素数
+					System.out.println("素数です。");
+					break;
+					
+				//positiveInteger>2のとき
+				default:
+					//nIntを2、3、・・・nIntで割るループ
+					for (int divisorInt = 2; divisorInt < positiveInteger; divisorInt++) {
+	
+						//t(2<=divisor<n)でnを割り、余りが0になることがあれば素数ではない、
+						if (positiveInteger % divisorInt == 0) {
+							System.out.println("素数ではありません");
+							break;
+						}
+	
+						//t(2<=divisor<n)でnを割り、余りが1以上であれば素数である
+						else {
+							//nInt自身以外で割り切れなかったら素数決定
+							if (divisorInt == positiveInteger - 1) {
+								System.out.println("素数です");
+							//nInt自身以外で割るのをすべて試すまで繰り返す
+							}else {
+								continue;
+							}
 						}
 					}
-				}
 			}
 
 			//retryNumは0か1
@@ -85,7 +94,7 @@ public class ensyu04_24 {
 				//もう一度プログラムを実行するかどうかを聞く
 				System.out.print("もう一度？ YES・・・1/NO・・・0");
 				//入力値を変数に格納
-				retryNum = stdIn.nextInt();
+				retryNum = standardInput.nextInt();
 			//retryNumは0か1以外なら聞き直す
 			} while (retryNum < 0 || retryNum > 1);
 			
@@ -99,7 +108,7 @@ public class ensyu04_24 {
 		System.out.println("素数判定プログラムを終了しました。");
 
 		//newしたscannerのインスタンスstdInをクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 }
