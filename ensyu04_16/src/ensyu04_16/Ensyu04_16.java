@@ -19,32 +19,36 @@ public class Ensyu04_16 {
 
 	public static void main(String[] args) {
 		
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		//*を何個表示するか
-		int count = 0;
+		int printNumber = 0;
+		
 		//何個表示するかを聞くかたまり
 		do {
 			//何個表示するかを聞くナビ
 			System.out.print("何個*を表示しますか？：");
 			//キーボードからの入力値を取得
-			count = stdIn.nextInt();
+			printNumber = standardInput.nextInt();
+			
 		//0以下だったら聞き直す
-		} while (count <= 0);
+		} while (printNumber <= 0);
 		
-		//1からcountまで繰り返す
-		for (int i = 1; i <= count; i++) {
+		//1からprintNumberまで繰り返す
+		for (int printIndex = 1; printIndex <= printNumber; printIndex++) {
+			
 			//アスタリスク表示
 			System.out.print('*');
-			//5の倍数個表示するごとに改行
-			if (i % 5 == 0) {
+			
+			//5の倍数個表示するごと
+			if (printIndex % 5 == 0) {
+				//改行
 				System.out.println();
 			}
-			
 		}
 		
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 }
