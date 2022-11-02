@@ -20,26 +20,26 @@ public class Ensyu04_10 {
 	public static void main(String[] args) {
 		
 		//キーボードから入力できるようにscannerクラスをnew
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		System.out.print("何個*を表示しますか：");
 		
 		//表示する個数
-		int nMax = stdIn.nextInt();
+		int printMax = standardInput.nextInt();
 		
-		//nMax回繰り返す
-		for (int i = 1; i <= nMax; i++) {
+		//printMax回繰り返す
+		for (int i = 1; i <= printMax; i++) {
 			//アスタリスク表示
 			System.out.print('*');
 			
 			//最後まで表示したら改行
-			if (i == nMax) {
+			if (i == printMax) {
 				System.out.println();
 			}
 		}
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 }
