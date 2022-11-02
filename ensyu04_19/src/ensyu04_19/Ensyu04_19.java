@@ -27,7 +27,7 @@ public class Ensyu04_19 {
 	public static void main(String[] args) {
 
 		//stdInにキーボードからの入力値を初期設定
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 
 		//整数型変数retryNumを用意
 		int retryNum;
@@ -36,7 +36,7 @@ public class Ensyu04_19 {
 		do {
 			
 		//整数型変数monthを用意しておく（内部のdoと外部のdoで共通）
-		int month = 0;
+		int monthNumber = 0;
 
 			//ここからdoメソッド：入力値が1～12以外の場合再入力させる
 			do {
@@ -44,28 +44,28 @@ public class Ensyu04_19 {
 				System.out.print ("季節を求めます。\n何月ですか：");
 
 				//monthに入力値を代入
-				month  = stdIn.nextInt();
+				monthNumber  = standardInput.nextInt();
 			
 			//1～12以外が入力されたら聞き直す
-			} while (month < 1 || month > 12);
+			} while (monthNumber < 1 || monthNumber > 12);
 			
 			//3～5月
-			if (month >= 3 && month <= 5)
+			if (monthNumber >= 3 && monthNumber <= 5)
 				//春
 				System.out.println("それは春です。");
 			
 			//6～8月
-			else if (month >=6  && month <= 8)
+			else if (monthNumber >=6  && monthNumber <= 8)
 				//夏
 				System.out.println("それは夏です。");
 			
 			//9～11月
-			else if (month >=9  && month <= 11)
+			else if (monthNumber >=9  && monthNumber <= 11)
 				//秋
 				System.out.println("それは秋です。");
 			
 			//12、1、2月
-			else if (month == 12 || month == 1 || month == 2)
+			else if (monthNumber == 12 || monthNumber == 1 || monthNumber == 2)
 				//冬
 				System.out.println("それは冬です。");
 
@@ -75,13 +75,13 @@ public class Ensyu04_19 {
 			System.out.print("1・・・Yes/0・・・No");
 
 			//retryNumに入力値を初期設定
-			retryNum = stdIn.nextInt();
+			retryNum = standardInput.nextInt();
 
 		//doメソッドここまで
 		} while (retryNum == 1);
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 
