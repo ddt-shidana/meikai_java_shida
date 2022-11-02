@@ -20,28 +20,35 @@ public class Ensyu04_07 {
 	public static void main(String[] args) {
 		
 		//キーボードからの入力値を取得
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		//アスタリスクを表示する数
 		int nInt;
 		
+		//アスタリスクを表示する数を決める
 		do {
+			//何個表示するかを聞く
 			System.out.print("何個表示しますか：");
-			nInt = stdIn.nextInt();
-		} while (nInt < 1);
+			//nIntに入力値を格納
+			nInt = standardInput.nextInt();
 		
-		//アスタリスクとプラスを1セットとして、index回表示するカウンター
-		int counter = 0;
-		//counterは0～nInt-1までカウントする
-		while (counter < nInt) {
+		//nIntは0以上
+		} while (nInt < 0);
+		
+		//アスタリスクとプラスを1セットとして、indexCounter回表示するカウンター
+		int indexCounter = 0;
+		
+		//indexCounterは0～nInt-1までカウントする
+		while (indexCounter < nInt) {
+			
 			//counterが偶数の時*、奇数の時+
-			System.out.print(counter % 2 == 0 ? "*" : "+");
+			System.out.print(indexCounter % 2 == 0 ? "*" : "+");
 			//counterを増やす
-			counter++;
+			indexCounter++;
 		}
 
 		//scannerのインスタンスを破棄
-		stdIn.close();
+		standardInput.close();
 
 	}
 }
