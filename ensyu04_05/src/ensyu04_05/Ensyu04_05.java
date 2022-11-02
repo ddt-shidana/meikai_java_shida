@@ -13,7 +13,7 @@ import java.util.Scanner;
  * 	--xだとデクリメントされた後の値が出力されるため、期待した結果にならない。<br>
  *
  * 作成日:2022/02/22<br>
- * 修正日:2022/09/28<br>
+ * 修正日:2022/11/02<br>
  * ver:1.1.0
  * @author ShidaKazuna
  */
@@ -21,8 +21,8 @@ public class Ensyu04_05 {
 	
 	public static void main(String[] args) {
 		
-		//stdInにキーボードからの入力値を初期設定
-		Scanner stdIn = new Scanner(System.in);
+		//standardInputにキーボードからの入力値を初期設定
+		Scanner standardInput = new Scanner(System.in);
 
 		//カウントダウン開始のメッセージを画面表示させる
 		System.out.println("カウントダウンします。");
@@ -36,7 +36,7 @@ public class Ensyu04_05 {
 			System.out.print("正の整数値：");
 
 			//xに入力値を代入
-			xInt = stdIn.nextInt();
+			xInt = standardInput.nextInt();
 
 		//xが0以下である間、doメソッドを繰り返す
 		} while (xInt <= 0);
@@ -49,7 +49,7 @@ public class Ensyu04_05 {
 		}
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 
