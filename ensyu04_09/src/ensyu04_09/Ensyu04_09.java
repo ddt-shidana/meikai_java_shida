@@ -19,36 +19,39 @@ public class Ensyu04_09 {
 	public static void main(String[] args) {
 		
 		//キーボードからの入力値をうけるための新規インスタンス
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		//正の整数
 		int nInt = 0;
+		
 		//正の整数が入力するブロック
 		do {
 			//正の整数を入力してもらう
 			System.out.print("nの値：");
 			//キーボードからの入力値をnIntに受け取る
-			nInt = stdIn.nextInt();
+			nInt = standardInput.nextInt();
 			//正の整数が入力されるまで繰り返す
+			
 		} while (nInt <= 0);
 		
-		//1からnまでの積（初期値1）
-		int ans = 1;
-		//1からnまで順番に増やす
-		int counter = 1;
-		//counterがnIntになるまでくりかえす
-		while (counter <= nInt) {
+		//1からnIntまでの積（初期値1）
+		int productAnswer = 1;
+		//1からnIntまで順番に増やす
+		int productIndex = 1;
+		
+		//productIndexがnIntになるまでくりかえす
+		while (productIndex <= nInt) {
 			//1から順番にかけ合わせていく
-			ans *= counter;
-			//counterを増やす
-			counter++;
+			productAnswer *= productIndex;
+			//productIndexを増やす
+			productIndex++;
 		}
 		
 		//かけ合わせた結果を表示
-		System.out.println("1から" + nInt + "までの積は" + ans + "です。");
+		System.out.println("1から" + nInt + "までの積は" + productAnswer + "です。");
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 
