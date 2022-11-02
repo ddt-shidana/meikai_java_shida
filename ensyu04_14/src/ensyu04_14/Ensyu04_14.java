@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 	演習4-13を書きかえて、右のように式を表示するプログラムを作成せよ。<br>
  *
  * 作成日:2022/02/22<br>
- * 修正日:2022/09/28<br>
+ * 修正日:2022/11/02<br>
  * ver:1.1.0
  * @author ShidaKazuna
  */
@@ -18,37 +18,39 @@ public class Ensyu04_14 {
 
 	public static void main(String[] args) {
 		
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		//足す最後の自然数
-		int nMax;
+		int naturalNumber;
+		
 		//nの値を聞くかたまり
 		do {
 			//nの値入力ナビ
 			System.out.print("nの値：");
 			//キーボードからの入力値を受け取る
-			nMax = stdIn.nextInt();
+			naturalNumber = standardInput.nextInt();
+			
 		//0以下は聞き直す
-		} while (nMax <= 0);
+		} while (naturalNumber <= 0);
 		
 		//合計値
-		int sum = 0;
+		int sumInt = 0;
 		//1からnMaxまで繰り返す
-		for (int i = 1; i <= nMax; i++) {
+		for (int sumIndex = 1; sumIndex <= naturalNumber; sumIndex++) {
 			
 			//順番に足していく
-			sum += i;
+			sumInt += sumIndex;
 			//足した数を表示
-			System.out.print(i);
+			System.out.print(sumIndex);
 			//最後に足す数だった場合、=を、それ以外は+を表示
-			System.out.print(i == nMax ? " = " : " + ");
+			System.out.print(sumIndex == naturalNumber ? " = " : " + ");
 		}
 		
 		//足し合わせた結果を表示
-		System.out.println(sum);
+		System.out.println(sumInt);
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 }
