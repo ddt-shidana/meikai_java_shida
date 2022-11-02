@@ -19,34 +19,35 @@ public class Ensyu04_13 {
 	public static void main(String[] args) {
 		
 		//Scannerクラスのインスタンスを生成
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		//何のプログラムか画面表示
 		System.out.println("1からnまでの和を求めます。");
 		
-		//nは自然数
-		int nInt;
+		//naturalNumberは自然数
+		int naturalNumber;
 		//nの値を聞くかたまり
 		do {
-			//nの値入力ナビ
+			//naturalNumberの値入力ナビ
 			System.out.print("nの値：");
 			//キーボードからの入力値を受け取る
-			nInt = stdIn.nextInt();
+			naturalNumber = standardInput.nextInt();
+			
 		//0以下は聞き直す
-		} while (nInt <= 0);
+		} while (naturalNumber <= 0);
 
 		//合計値
-		int sum = 0;
+		int sumInt = 0;
 		//1からnまで
-		for (int i = 1; i <= nInt; i++) {
+		for (int sumIndex = 1; sumIndex <= naturalNumber; sumIndex++) {
 			//加算していく
-			sum += i;
+			sumInt += sumIndex;
 		}
 		
 		//結果を画面表示
-		System.out.println("1から" + nInt + "までの和は" + sum + "です。");
+		System.out.println("1から" + naturalNumber + "までの和は" + sumInt + "です。");
 
-		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		//newされているので、scannerのインスタンス(standardInput)をクローズ
+		standardInput.close();
 
 	}
 }
