@@ -18,8 +18,8 @@ public class Ensyu04_04 {
 	
 	public static void main(String[] args) {
 		
-		//stdInにキーボードからの入力値を初期設定
-		Scanner stdIn = new Scanner(System.in);
+		//standardInputにキーボードからの入力値を初期設定
+		Scanner standardInput = new Scanner(System.in);
 
 		//カウントダウン開始のメッセージを画面表示させる
 		System.out.println("カウントダウンします。");
@@ -33,7 +33,7 @@ public class Ensyu04_04 {
 			System.out.print("正の整数値：");
 
 			//xに入力値を代入
-			xInt = stdIn.nextInt();
+			xInt = standardInput.nextInt();
 
 		//xが0以下である間、doメソッドを繰り返す
 		} while (xInt <= 0);
@@ -51,7 +51,7 @@ public class Ensyu04_04 {
 		System.out.println("xの値：" + xInt);
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 
