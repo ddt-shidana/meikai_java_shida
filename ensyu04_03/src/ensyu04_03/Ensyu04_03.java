@@ -18,24 +18,26 @@ import java.util.Scanner;
 public class Ensyu04_03 {
 	
 	public static void main(String[] args) {
+		
 		//stdInにキーボードからの入力値を初期設定
-		Scanner stdIn = new Scanner (System.in);
+		Scanner standardInput = new Scanner (System.in);
 
 		//二つの整数値を入力してもらうため、メッセージを画面表示させる
 		//整数型変数maxInt,minIntを用意し、入力値(stdIn)を初期設定
 		//入力値の型が整数型よりも大きい箱の場合、エラーになります。
 		System.out.print("整数値A:");
-		int maxInt = stdIn.nextInt();
+		int maxInt = standardInput.nextInt();
 		System.out.print("整数値B:");
-		int minInt = stdIn.nextInt();
+		int minInt = standardInput.nextInt();
 
 		//maxInt>=minIntになるように、値の大小比較をし、
-		//maxInt<minIntになっていた場合は、値を入れ替える。
+		//maxInt<minIntになっていた場合は、
 		if (maxInt < minInt) {
 			//tempは値の入れ替えをする時に使う仮変数
-			int temp = maxInt;
+			int tenpInt = maxInt;
+			//値を入れ替える。
 			maxInt = minInt;
-			minInt = temp;
+			minInt = tenpInt;
 		}
 
 		//入力した整数値で大きいほうの値を画面表示させる
@@ -54,11 +56,10 @@ public class Ensyu04_03 {
 			//最後の画面表示はmaxIntになる
 			System.out.println(midInt + "　");
 
-		//midInt = maxIntにならない間、doメソッドを繰り返す
 		}
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 
