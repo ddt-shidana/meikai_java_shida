@@ -21,7 +21,7 @@ public class Ensyu04_21 {
 	public static void main(String[] args) {
 		
 		//stdInにキーボードからの入力値を初期設定
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 
 		//整数型変数patternNumを用意。(0<=patternNum<=2)
 		int patternNum;
@@ -36,7 +36,7 @@ public class Ensyu04_21 {
 			System.out.println("2・・・直角が右上");
 
 			//patternNumに入力値を初期設定
-			patternNum = stdIn.nextInt();
+			patternNum = standardInput.nextInt();
 
 		} while (patternNum < 0 || patternNum > 2);
 
@@ -44,15 +44,18 @@ public class Ensyu04_21 {
 		//直角三角形の段数nはいくつにしますか？と聞く
 		System.out.println("直角三角形の段数nはいくつにしますか？");
 
-		//段数n(n>0)変数を用意
-		int step;
+		//段数stepNumber(>0)変数を用意
+		int stepNumber;
 
 		//nが0以下のとき、図形が作成できない為、聞き直す
 		do {
-			//段数nを聞く
+			//段数stepNumberを聞く
 			System.out.println("正の整数n:");
-			step = stdIn.nextInt();
-		} while (step <= 0);
+			//入力値をstepNumberに設定
+			stepNumber = standardInput.nextInt();
+		
+		//0以下だと意味がないので聞き直す
+		} while (stepNumber <= 0);
 
 
 		//patternNumで条件分岐
@@ -60,17 +63,17 @@ public class Ensyu04_21 {
 		
 		//直角が左上
 		case 0:
-			//縦列：変数verticalを1からはじめて、1つずつ増やしながら、n回ループさせる
-			for (int vertical = 1; vertical <=step; vertical++) {
+			//縦列のループ
+			for (int verticalIndex = 1; verticalIndex <=stepNumber; verticalIndex++) {
 				
-				//横列：変数besideをnからはじめて、1つず減らしながら、(n-vertical+1)回ループさせる
-				for (int beside = 1; beside <= (step-vertical+1); beside++) {
+				//横列のループ
+				for (int besideIndex = 1; besideIndex <= (stepNumber-verticalIndex+1); besideIndex++) {
 					
 					//'*'を表示させる。
 					System.out.print('*');
 					
 					//横列の'*'間と縦の行間を揃えるために、スペースを追加
-					if (beside < (step-vertical+1))
+					if (besideIndex < (stepNumber-verticalIndex+1))
 						System.out.print(" ");
 				}
 				
@@ -80,24 +83,24 @@ public class Ensyu04_21 {
 			
 		//直角が右下
 		case 1:
-			//縦・・・初期値:1、ループ回数:n、処理内容:verticalを増やす
-			for (int vertical = 1; vertical <= step; vertical++) {
+			//縦のループ
+			for (int verticalIndex = 1; verticalIndex <= stepNumber; verticalIndex++) {
 				
-				//横スペース・・・初期値:n-1、ループ回数:n-vertical、処理内容:besideSを増やす
-				for (int besideS = 1; besideS <= (step -vertical); besideS++) {
+				//横スペースのループ
+				for (int besideSpaceIndex = 1; besideSpaceIndex <= (stepNumber -verticalIndex); besideSpaceIndex++) {
 					
 					//スペースを表示
 					System.out.print("  ");
 				}
 				
-				//横*文字・・・初期値:1、ループ回数:vertical、処理内容:besideSを増やす
-				for (int besideS = 1; besideS <= vertical; besideS++) {
+				//横*文字のループ
+				for (int besideS = 1; besideS <= verticalIndex; besideS++) {
 					
 					//'*'を表示させる。
 					System.out.print('*');
 					
 					//ただし2文字以上並ぶとき、
-					if (vertical >= 2)
+					if (verticalIndex >= 2)
 						//並べる感覚をそろえる為にスペースを追加する
 						System.out.print(" ");
 				}
@@ -107,24 +110,24 @@ public class Ensyu04_21 {
 			
 		//直角が右上
 		case 2:
-			//縦・・・初期値:1、ループ回数:n、処理内容:verticalを増やす
-			for (int vertical = 1; vertical <= step; vertical++) {
+			//縦のループ
+			for (int verticalIndex = 1; verticalIndex <= stepNumber; verticalIndex++) {
 				
-				//横スペース・・・初期値:1、ループ回数:vertical-1、処理内容:besideS増やす
-				for (int besideS = 1; besideS <= (vertical-1); besideS++) {
+				//横スペースのループ
+				for (int besideSpaceIndex = 1; besideSpaceIndex <= (verticalIndex-1); besideSpaceIndex++) {
 					
 					//スペースを表示
 					System.out.print("  ");
 				}
 				
-				//横*文字・・・初期値:1、ループ回数:n -vertical + 1、処理内容:besideSを増やす
-				for (int besideS = 1; besideS <= (step -vertical + 1); besideS++) {
+				//横*文字のループ
+				for (int besideStringIndex = 1; besideStringIndex <= (stepNumber -verticalIndex + 1); besideStringIndex++) {
 					
 					//'*'を表示させる。
 					System.out.print('*');
 					
 					//ただし2文字以上並ぶとき、
-					if (vertical < step)
+					if (verticalIndex < stepNumber)
 						
 						//並べる感覚をそろえる為にスペースを追加する
 						System.out.print(" ");
@@ -132,12 +135,13 @@ public class Ensyu04_21 {
 				
 				//改行
 				System.out.println();
-			};	break;
+			}
+			break;
 
 		}
 
 		//newしたscannerのインスタンスstdInをクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 }
