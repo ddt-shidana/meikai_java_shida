@@ -19,7 +19,7 @@ public class Ensyu04_18 {
 	public static void main(String[] args) {
 		
 		//Scannerのインスタンスを生成
-		Scanner stdIn = new Scanner(System.in);
+		Scanner standardInput = new Scanner(System.in);
 		
 		//整数値
 		int nInt;
@@ -28,18 +28,18 @@ public class Ensyu04_18 {
 			//nの値入力ナビ
 			System.out.print("nの値：");
 			//キーボードからの入力値を取得
-			nInt = stdIn.nextInt();
+			nInt = standardInput.nextInt();
 		//1以下は意味ないので、2以上の整数値
 		} while (nInt < 1);
 		
 		//1からnIntまで繰り返す
-		for (int i = 1; i <= nInt; i++) {
+		for (int printIndex = 1; printIndex <= nInt; printIndex++) {
 			//2乗の値を表示
-			System.out.println(i + "の2乗は" + (i * i));
+			System.out.println(printIndex + "の2乗は" + (printIndex * printIndex));
 		}
 
 		//newされているので、scannerのインスタンス(stdIn)をクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 }
