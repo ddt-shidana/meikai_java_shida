@@ -20,43 +20,43 @@ public class Ensyu04_22 {
 
 	public static void main(String[] args) {
 		
-		//stdInにキーボードからの入力値を初期設定
-		Scanner stdIn = new Scanner(System.in);
+		//standardInputにキーボードからの入力値を初期設定
+		Scanner standardInput = new Scanner(System.in);
 
 		//ピラミッド作成プログラムの開始メッセージを画面表示させる
 		System.out.println("n段のピラミッドを作成します。");
 
-		//段数step(step>0)変数を用意
-		int step;
+		//段数stepNumber(>0)変数を用意
+		int stepNumber;
 
 		//段数を聞くかたまり
 		do {
 			//段数nを聞く
 			System.out.print("正の整数n:");
 			//入力値をstepに格納する
-			step = stdIn.nextInt();
+			stepNumber = standardInput.nextInt();
 			
 		//stepが0以下のとき、図形が作成できない為、聞き直す	
-		} while (step <= 0);
+		} while (stepNumber <= 0);
 
 		//縦のループ
-		for (int vertical = 1; vertical <= step; vertical++) {
+		for (int verticalIndex = 1; verticalIndex <= stepNumber; verticalIndex++) {
 			
 			//横スペース左のループ
-			for (int besideSL = 1; besideSL <= (step-vertical); besideSL++) {
+			for (int besideSpaceLeftIndex = 1; besideSpaceLeftIndex <= (stepNumber-verticalIndex); besideSpaceLeftIndex++) {
 				
 				//スペースを表示
 				System.out.print("  ");
 			}
 
 			//横メインループ
-			for (int beside = 1; beside <= ((vertical-1)*2+1); beside++) {
+			for (int besideIndex = 1; besideIndex <= ((verticalIndex-1)*2+1); besideIndex++) {
 				
 				//アスタリスク表示
 				System.out.print('*');
 				
 				//ただし2文字以上並ぶとき、
-				if (vertical >= 2) {
+				if (verticalIndex >= 2) {
 					
 					//並べる間隔をそろえる為にスペースを追加する
 					System.out.print(" ");
@@ -64,13 +64,13 @@ public class Ensyu04_22 {
 			}
 			
 			//横スペース右のループ
-			for (int besideSL = 1; besideSL <= (step-vertical); besideSL++) {
+			for (int besideSpaceRightIndex = 1; besideSpaceRightIndex <= (stepNumber-verticalIndex); besideSpaceRightIndex++) {
 				
 				//スペースの表示
 				System.out.print("  ");
 				
 				//ただし2文字以上並ぶとき、
-				if (vertical >= (step - 2)) {
+				if (verticalIndex >= (stepNumber - 2)) {
 					//並べる間隔をそろえる為にスペースを追加する
 					System.out.print(" ");
 				}
@@ -81,7 +81,7 @@ public class Ensyu04_22 {
 		}
 
 		//newしたscannerのインスタンスstdInをクローズ
-		stdIn.close();
+		standardInput.close();
 
 	}
 }
