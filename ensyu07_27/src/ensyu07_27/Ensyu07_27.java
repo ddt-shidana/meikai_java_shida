@@ -33,34 +33,11 @@ public class Ensyu07_27 {
 
 		//配列cを用意
 		int[][] c = new int[2] [3];
+		//a+bをcとし、cを表示
+		System.out.println("行列c");
+		addMatrix(a, b, c);
+		printMatrix(c);
 
-		//3つの配列の行列が一致したら
-		if (addMatrix(a, b, c) == true) {
-			//一致したメッセージを表示
-			System.out.println("3つの配列の行列が一致しました。");
-			//a+bをcとし、cを表示
-			System.out.println("行列c");
-			printMatrix(c);
-		}
-		//3つの配列の行列が一致しなかったら
-		else {
-			//一致しないメッセージを表示
-			System.out.println("3つの配列の行列が一致しません。");
-		}
-	}
-	
-	/**
-	 * 続行の確認を行うメソッド
-	 * 入力値が1のとき繰り返す、0のとき終了
-	 * @return 入力値が1のときTrue
-	 */
-	private static boolean confirmRetry() {
-		int retryNum;
-		do {
-			System.out.print("もう一度？ YES・・・1/NO・・・0：");
-			retryNum = stdIn.nextInt();
-		} while (retryNum < 0 || retryNum > 1);
-		return retryNum == 1;
 	}
 
 	/**
@@ -100,18 +77,11 @@ public class Ensyu07_27 {
 	 * @param p 2次元配列
 	 * @param q 2次元配列
 	 * @param r 2次元配列
-	 * @return
+	 * @return 行数列数全てが一致している場合にtrue
 	 */
 	private static boolean equalMatrixLengthOfThree(int[][] p, int[][] q, int[][] r) {
-		int equalNum3;
-		if (equalMatrixLength(p, q) && equalMatrixLength(q, r) && equalMatrixLength(r, p)) {
-			equalNum3 = 1;
-		}
-		else {
-			equalNum3 = 0;
-		}
 		//行数列数全てが一致している場合（1）にtrueを返す
-		return equalNum3 == 1;
+		return equalMatrixLength(p, q) && equalMatrixLength(q, r) && equalMatrixLength(r, p);
 	}
 
 	/**
@@ -121,7 +91,7 @@ public class Ensyu07_27 {
 	 * @param z 行列
 	 * @return 行列の和をセットする
 	 */
-	private static boolean addMatrix(int[][] x, int[][] y, int[][] z) {
+	private static void addMatrix(int[][] x, int[][] y, int[][] z) {
 		if (equalMatrixLengthOfThree(x, y, z)) {
 			for (int i = 0; i < x.length; i++) {
 				for (int j = 0; j < x[i].length; j++) {
@@ -129,8 +99,6 @@ public class Ensyu07_27 {
 				}
 			}
 		}
-		//x,y,zの行列が全て一致している時true
-		return (equalMatrixLengthOfThree(x, y, z));
 	}
 
 	/**
